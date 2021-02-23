@@ -3,7 +3,7 @@ const axios = require('axios');
 const jsdom = require("jsdom");
 
 const { Telegraf } = require('telegraf')
-const bot = new Telegraf(process.env.BOT_TOKEN)
+const bot = new Telegraf("1641273738:AAGMelgAdDTz2ForBwtEXeYNV126gBBEESI")
 
 bot.start((ctx) => {
   ctx.reply("Bot is active and running 🤖")
