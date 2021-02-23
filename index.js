@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 const axios = require('axios');
 const jsdom = require("jsdom");
 
@@ -38,32 +38,32 @@ axios.post("https://api.scraperbox.com/scrape",options)
   
   price = btcElement.textContent.trim();
   priceText = parseFloat(price.replace(",","").replace("$",""));
-  prices.push(BTC : ₹${priceText * 72.549});
+  prices.push(`BTC : ₹${Math.round( priceText * 72.549)}`);
   // console.log(BTC: ₹${priceText});
 
   price = ethElement.textContent.trim();
   priceText = parseFloat(price.replace(",","").replace("$",""))
-  prices.push(ETH : ₹${Math.round(priceText * 72.549)});
+  prices.push(`ETH : ₹${Math.round((priceText * 72.549))}`);
   // console.log(ETH : ${priceText });
 
   price = bnbElement.textContent.trim();
   priceText = parseFloat(price.replace(",","").replace("$",""))
-  prices.push(*BNB : ₹${priceText * 72.549}*);
+  prices.push(`BNB : ₹${Math.round(priceText * 72.549)}`);
   // console.log(BNB : ₹${priceText});
 
   price = ltcElement.textContent.trim();
   priceText = parseFloat(price.replace(",","").replace("$",""))
-  prices.push(LTC : ₹${priceText * 72.549});
+  prices.push(`LTC : ₹${Math.round(priceText * 72.549)}`);
   // console.log(LTC : ₹${priceText * 72.549});
 
   price = linkElement.textContent.trim();
   priceText = parseFloat(price.replace(",","").replace("$",""))
-  prices.push(LINK : ₹${priceText * 72.549});
+  prices.push(`LINK : ₹${Math.round(priceText * 72.549)}`);
   // console.log(LINK : ₹${priceText});
 
   price = xrpElement.textContent.trim();
   priceText = parseFloat(price.replace(",","").replace("$",""))
-  prices.push(XRP : ₹${priceText * 72.549});
+  prices.push(`XRP : ₹${Math.round(priceText * 72.549)}`);
   // console.log(XRP : ₹${priceText});
 
   // price = xlmElement.textContent.trim();
@@ -74,4 +74,6 @@ axios.post("https://api.scraperbox.com/scrape",options)
     prices.forEach(price => ctx.reply(price))
   })
 bot.launch();
+
+console.log("Telegram Bot is running.....")
 })
