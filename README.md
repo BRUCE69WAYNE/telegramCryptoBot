@@ -1,3 +1,4 @@
-# telegramCryptoBot
+# CRYPTOBOT🤖
 
-strating making changes
+ **Hourly updates on Cryptocoins!!**
+
